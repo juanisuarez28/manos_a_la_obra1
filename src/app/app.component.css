@@ -1,0 +1,30 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+}
+
+label{
+    font-size: 20px;
+}
+
+.task, .newTask{
+    display: flex;
+    margin: 10px;
+    padding: 3px;
+    width: 13%;
+    justify-content: space-between;
+}
+.task{
+    border-style: solid;
+    border-color: black;
+    border-width: 0.1px;
+}
+
+img{
+    width: 20px;
+}
