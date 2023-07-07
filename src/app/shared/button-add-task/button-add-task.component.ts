@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-button-add-task',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./button-add-task.component.css']
 })
 export class ButtonAddTaskComponent {
-
+  
 }
