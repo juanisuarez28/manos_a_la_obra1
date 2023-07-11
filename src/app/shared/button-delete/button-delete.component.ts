@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class ButtonDeleteComponent {
   imageDelete="assets/images/delete.svg";
+
 }

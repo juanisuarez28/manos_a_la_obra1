@@ -7,17 +7,34 @@ import { Component } from '@angular/core';
 })
 
 export class FormNewTaskComponent {
-  tasks: any[] = [];
-  taskToAdd: any = " ";
+  tasks: any[] = [
+    {nombre:'Desayunar',estado:false},
+    {nombre:'Manos a la obra 30',estado:false},
+    {nombre:'Cenar',estado:false}
+  ];
+  taskToAdd: any = {};
 
   mostrarTarea(value:any){
     console.log(value);
-    this.taskToAdd=value;    
+    this.taskToAdd={nombre:value,estado:false};    
   }
 
   agregarTarea(){
     this.tasks.push(this.taskToAdd);
     console.log(this.tasks);
+  }
+
+  deleteTask(value:any){
+    let borrar=-1;  
+    this.tasks.forEach((item, index) => {
+        if (item.nombre == value){
+          borrar=index;
+        }
+      })
+      if(borrar>=0){
+        this.tasks.splice(borrar,1);
+      }
+      console.log(this.tasks);
   }
 
 }

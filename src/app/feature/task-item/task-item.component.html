@@ -1,4 +1,4 @@
 <div class="task">
-    <app-input-task></app-input-task>
-    <app-button-delete></app-button-delete>
+    <app-input-task  [task]="task"></app-input-task>
+    <app-button-delete (click)="deleteTask()"></app-button-delete>
 </div>

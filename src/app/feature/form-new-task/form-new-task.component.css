@@ -5,3 +5,8 @@
     width: 100%;
     align-items: center;
 }
+
+ul{
+    list-style: none;
+    padding-inline-start: 3px;
+}

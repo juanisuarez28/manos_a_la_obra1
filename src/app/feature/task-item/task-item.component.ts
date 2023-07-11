@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-task-item',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./task-item.component.css']
 })
 export class TaskItemComponent {
+  @Output() taskDelete= new EventEmitter<string>();
+  @Input() task='';
 
+  deleteTask(){
+    this.taskDelete.emit(this.task);
+  }
 }
