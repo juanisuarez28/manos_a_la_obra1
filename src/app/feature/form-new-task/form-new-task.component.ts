@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import{ Task } from 'src/app/models/ctask.model';
 
 @Component({
   selector: 'app-form-new-task',
@@ -7,16 +8,21 @@ import { Component } from '@angular/core';
 })
 
 export class FormNewTaskComponent {
-  tasks: any[] = [
-    {nombre:'Desayunar',estado:false},
-    {nombre:'Manos a la obra 30',estado:false},
-    {nombre:'Cenar',estado:false}
-  ];
-  taskToAdd: any = {};
+   task1= new Task('Ordenar', false);
+   task2= new Task('Cenar', false);
+   task3= new Task('Entrenar', false);
 
-  mostrarTarea(value:any){
+  tasks: Task[] = [
+     this.task1,
+     this.task2,
+     this.task3
+  ];
+  
+  taskToAdd= new Task('', false);
+
+  mostrarTarea(value:string){
     console.log(value);
-    this.taskToAdd={nombre:value,estado:false};    
+    this.taskToAdd.setTitle(value);    
   }
 
   agregarTarea(){
@@ -24,10 +30,10 @@ export class FormNewTaskComponent {
     console.log(this.tasks);
   }
 
-  deleteTask(value:any){
+  deleteTask(value:string){
     let borrar=-1;  
     this.tasks.forEach((item, index) => {
-        if (item.nombre == value){
+        if (item.getTitle() == value){
           borrar=index;
         }
       })
