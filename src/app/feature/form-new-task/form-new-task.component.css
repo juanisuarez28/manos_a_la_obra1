@@ -1,8 +1,10 @@
 .form-new-task{
     display: flex;
     margin: 5px;
-    padding: 3px;
-    width: 100%;
+    padding: 3px;   
+    width: 20rem;
     align-items: center;
 }
+
+
 

@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TaskService } from 'src/app/services/tasks/task.service';
 
 @Component({
   selector: 'app-task-item',
@@ -6,10 +7,31 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./task-item.component.css']
 })
 export class TaskItemComponent {
-  @Output() taskDelete= new EventEmitter<string>();
   @Input() task='';
 
+  constructor(public tasksService : TaskService){}
+
   deleteTask(){
-    this.taskDelete.emit(this.task);
+    let s=this.task;
+    this.tasksService.deleteTask(s);
   }
+
+  share() {
+    if (!("share" in navigator)) {
+      alert('Web Share API not supported.');
+      return;
+    }
+  
+    navigator.share({
+        title: "Tarea: "+ this.task ,
+        text: 'Can I rely on the Web Platform features to build my app? An overview of the device integration HTML5 APIs'
+      })
+      .then(() => console.log('Successful share'))
+      .catch(error => console.log('Error sharing:', error));
+  }
+  copy(){
+    navigator.clipboard.writeText(this.task);
+  }
+  
+ 
 }

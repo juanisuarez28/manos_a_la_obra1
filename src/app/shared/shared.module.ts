@@ -5,6 +5,8 @@ import { ButtonDeleteComponent } from './button-delete/button-delete.component';
 import { InputTaskComponent } from './input-task/input-task.component';
 import { InputNewTaskComponent } from './input-new-task/input-new-task.component';
 import { InputTaskCheckedComponent } from './input-task-checked/input-task-checked.component';
+import { ButtonShareComponent } from './button-share/button-share.component';
+import { ButtonCopyComponent } from './button-copy/button-copy.component';
 
 
 
@@ -14,7 +16,9 @@ import { InputTaskCheckedComponent } from './input-task-checked/input-task-check
     ButtonDeleteComponent,
     InputTaskComponent,
     InputNewTaskComponent,
-    InputTaskCheckedComponent
+    InputTaskCheckedComponent,
+    ButtonShareComponent,
+    ButtonCopyComponent
   ],
   imports: [
     CommonModule
@@ -25,6 +29,8 @@ import { InputTaskCheckedComponent } from './input-task-checked/input-task-check
     InputTaskComponent,
     InputNewTaskComponent,
     InputTaskCheckedComponent,
+    ButtonShareComponent,
+    ButtonCopyComponent
   ]
 })
 export class SharedModule { }
