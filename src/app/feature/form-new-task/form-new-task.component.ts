@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import{ Task } from 'src/app/models/ctask.model';
+import { TaskService } from 'src/app/services/tasks/task.service';
 
 @Component({
   selector: 'app-form-new-task',
@@ -7,18 +8,10 @@ import{ Task } from 'src/app/models/ctask.model';
   styleUrls: ['./form-new-task.component.css']
 })
 
-export class FormNewTaskComponent {
-   task1= new Task('Ordenar', false);
-   task2= new Task('Cenar', false);
-   task3= new Task('Entrenar', false);
-
-  tasks: Task[] = [
-     this.task1,
-     this.task2,
-     this.task3
-  ];
-  
+export class FormNewTaskComponent { 
   taskToAdd= new Task('', false);
+
+  constructor(public tasksService: TaskService){ }
 
   mostrarTarea(value:string){
     console.log(value);
@@ -26,21 +19,8 @@ export class FormNewTaskComponent {
   }
 
   agregarTarea(){
-    this.tasks.push(this.taskToAdd);
-    console.log(this.tasks);
-  }
-
-  deleteTask(value:string){
-    let borrar=-1;  
-    this.tasks.forEach((item, index) => {
-        if (item.getTitle() == value){
-          borrar=index;
-        }
-      })
-      if(borrar>=0){
-        this.tasks.splice(borrar,1);
-      }
-      console.log(this.tasks);
+    this.tasksService.createTask(this.taskToAdd);
+    console.log(this.tasksService.getTasks());
   }
 
 }

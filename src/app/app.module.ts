@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { FeatureModule } from './feature/feature.module';
 import { CoreModule } from './core/core.module';
+import { TaskService } from './services/tasks/task.service';
+
 
 
 @NgModule({
@@ -15,9 +17,9 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     SharedModule,
     FeatureModule,
-    CoreModule
+    CoreModule,
   ],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { FormNewTaskComponent } from './form-new-task/form-new-task.component';
 import { TaskItemComponent } from './task-item/task-item.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { TaskItemCheckedComponent } from './task-item-checked/task-item-checked.component';
+import { TaskListComponent } from './task-list/task-list.component';
 
 
 
@@ -11,7 +12,8 @@ import { TaskItemCheckedComponent } from './task-item-checked/task-item-checked.
   declarations: [
     FormNewTaskComponent,
     TaskItemComponent,
-    TaskItemCheckedComponent
+    TaskItemCheckedComponent,
+    TaskListComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { TaskItemCheckedComponent } from './task-item-checked/task-item-checked.
   exports: [
     FormNewTaskComponent,
     TaskItemComponent,
-    TaskItemCheckedComponent
+    TaskItemCheckedComponent,
+    TaskListComponent
   ]
 })
 export class FeatureModule { }

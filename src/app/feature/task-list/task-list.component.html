@@ -1,0 +1,5 @@
+<ul >
+    <li *ngFor="let tarea of tasks">
+       <app-task-item (taskDelete)="deleteTask($event)" [task]="tarea.getTitle()"></app-task-item>
+    </li>
+</ul>

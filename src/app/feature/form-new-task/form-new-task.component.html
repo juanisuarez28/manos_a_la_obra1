@@ -1,9 +1,5 @@
 <div class="form-new-task" >
-    <app-input-new-task  (newTarea)="mostrarTarea($event)"></app-input-new-task>
+    <app-input-new-task #inputTask  (newTarea)="mostrarTarea($event)"></app-input-new-task>
     <app-button-add-task (click)="agregarTarea()"></app-button-add-task>
 </div>  
-<ul >
-    <li *ngFor="let tarea of tasks">
-       <app-task-item (taskDelete)="deleteTask($event)" [task]="tarea.getTitle()"></app-task-item>
-    </li>
-</ul>
+
